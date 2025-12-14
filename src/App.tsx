@@ -1,4 +1,4 @@
-import CountriesList from './components/CountriesList'
+import CountriesList from './components/CountriesList';
 
 export default function App() {
   return (
@@ -11,5 +11,5 @@ export default function App() {
         <CountriesList />
       </main>
     </div>
-  )
+  );
 }

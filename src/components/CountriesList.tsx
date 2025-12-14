@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
-import { useQuery } from '@tanstack/react-query'
-import { axiosCountries } from '../api/countries'
+import React, { useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { axiosCountries } from '../api/countries';
 
 export default function CountriesList() {
   // useQuery - главный хук TanStack Query для загрузки данных, кеширования и автообновления
@@ -15,11 +15,11 @@ export default function CountriesList() {
     staleTime: 1000 * 60 * 5,
     // Если пользователь вернулся во вкладку — запрос обновится в фоне
     refetchOnWindowFocus: true,
-  })
+  });
 
   useEffect(() => {
-    if (data) console.log('Countries loaded:', Object.keys(data).length)
-  }, [data])
+    if (data) console.log('Countries loaded:', Object.keys(data).length);
+  }, [data]);
 
   if (isLoading) return <p>Загрузка данных...</p>
   if (isError) return <p>Ошибка: {(error as Error).message}</p>
@@ -36,5 +36,5 @@ export default function CountriesList() {
         ))}
       </ul>
     </section>
-  )
+  );
 }
